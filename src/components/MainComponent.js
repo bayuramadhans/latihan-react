@@ -10,15 +10,13 @@ class Main extends Component {
     super(props);
     this.state = {
         dishes: DISHES,
-        selectedDish: null,
-        selectedDishComments:null
+        selectedDish: null
     };
   }
 
   onDishSelect(dish) {
     this.setState({
-      selectedDish: dish,
-      selectedDishComments: dish.comments
+      selectedDish: dish
     });
   }
 
@@ -31,7 +29,7 @@ class Main extends Component {
           </div>
         </Navbar>
         <Menu dishes={this.state.dishes} onClick={(dish) => this.onDishSelect(dish)} />
-        <DishDetail selectedDish={this.state.selectedDish} selectedDishComments={this.state.selectedDishComments} />
+        <DishDetail selectedDish={this.state.selectedDish} />
       </div>
     );
   }
